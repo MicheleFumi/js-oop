@@ -16,6 +16,7 @@ La classe "Automobile" eredita tutte le proprietà e i metodi della classe "Veic
 Successivamente:
 Istanziamo una nuova Automobile (Opel, 2020, nera, con 4 porte, a benzina)
 Stampiamo il numero di porte e il tipo di carburante.
+
 IDEE PER PRATICA RIPASSO:
 crea un array di veicoli
 cicla nell'array usando un forEach
@@ -40,13 +41,28 @@ class Auto{
        
 
     }
- // creo una funzione per loggare le info di una auto
+ // creo un metodo per loggare le info di una auto
   informazioni(){
     return this.brand + ' ' + 'del' + ' ' + this.year + ' di colore ' + this.color 
   }
-    
+
+  //creo un metodo per sapere quanti anni ha
+    calcolaEta(){
+        let currentYear = 2024
+        return currentYear - this.year
+    }
 }
 // creo una nuova istanza
-const Fiat =  new Auto('Fiat', 2019 ,'blu', 4, 'petrol' )
+const Fiat =  new Auto('Fiat', 2019 ,'blu', 4, 'benzina' )
 //loggo la istanza con il metodo per avere le info
 console.log(Fiat.informazioni());
+//loggo la istanza con il metodo per sapere quanti anni ha
+console.log(Fiat.calcolaEta());
+
+
+
+
+
+
+// creo una nuova istanza
+const Opel =  new Auto('Opel', 2020 ,'nera', 4, 'benzina' )
