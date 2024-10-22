@@ -16,13 +16,7 @@ La classe "Automobile" eredita tutte le proprietà e i metodi della classe "Veic
 Successivamente:
 Istanziamo una nuova Automobile (Opel, 2020, nera, con 4 porte, a benzina)
 Stampiamo il numero di porte e il tipo di carburante.
-
-IDEE PER PRATICA RIPASSO:
-crea un array di veicoli
-cicla nell'array usando un forEach
-cicla nell'array usando un for
-crea una nuova array che contenga solo il nome dei veicoli
-crea una nuova array con solo i veicoli elettriche */
+ */
 
 // creo la classe con le proprità
 class Veicolo{
@@ -91,3 +85,132 @@ class Automobile extends Veicolo{
 const Opel =  new Automobile('Opel', 2020 ,'nera', '4 porte', 'benzina' )
 
 console.log(Opel.info2());
+
+
+
+
+/* 
+IDEE PER PRATICA RIPASSO:
+crea un array di veicoli 
+cicla nell'array usando un forEach
+cicla nell'array usando un for
+crea una nuova array che contenga solo il nome dei veicoli
+crea una nuova array con solo i veicoli elettriche
+ */
+
+
+
+
+const cars = [
+    {
+      nome: "Fiat",
+      modello: "Punto",
+      alimentazione: "Benzina",
+      anno: 2010
+    },
+    {
+      nome: "Toyota",
+      modello: "Corolla",
+      alimentazione: "Ibrida",
+      anno: 2018
+    },
+    {
+      nome: "Tesla",
+      modello: "Model S",
+      alimentazione: "Elettrica",
+      anno: 2022
+    },
+    {
+      nome: "Volkswagen",
+      modello: "Golf",
+      alimentazione: "Diesel",
+      anno: 2015
+    },
+    {
+      nome: "Ford",
+      modello: "Focus",
+      alimentazione: "Benzina",
+      anno: 2016
+    },
+    {
+      nome: "BMW",
+      modello: "X3",
+      alimentazione: "Diesel",
+      anno: 2019
+    },
+    {
+      nome: "Nissan",
+      modello: "Leaf",
+      alimentazione: "Elettrica",
+      anno: 2021
+    },
+    {
+      nome: "Audi",
+      modello: "A3",
+      alimentazione: "Ibrida",
+      anno: 2020
+    },
+    {
+      nome: "Honda",
+      modello: "Civic",
+      alimentazione: "Benzina",
+      anno: 2017
+    },
+    {
+      nome: "Mercedes",
+      modello: "C-Class",
+      alimentazione: "Diesel",
+      anno: 2014
+    }
+  ];
+  
+  //cicla nell'array usando un forEach
+  cars.forEach((car) =>{
+    console.log(car);
+    console.log(car.anno);
+  })
+
+    //cicla nell'array usando un for
+  for (let i = 0; i < cars.length; i++) {
+    const car = cars[i];
+    
+    console.log(car.alimentazione);
+    
+  }
+
+  //crea una nuova array che contenga solo il nome dei veicoli
+
+  const carName = []
+  cars.forEach((car)=>{
+    carName.push(car.nome +' '+ car.modello)
+  })
+console.log(carName);
+
+
+  
+//crea una nuova array con solo i veicoli elettriche
+  const electric = []
+for (let i = 0; i < cars.length; i++) {
+    const car = cars[i];
+
+    
+    if (car.alimentazione === 'Elettrica') {
+       electric.push(car)
+    }
+
+    
+}
+
+console.log(electric);
+
+//extra    
+const newCar = []
+cars.forEach((car) =>{
+
+    if (car.anno >= 2017) {
+        newCar.push(car)
+    }
+
+})
+
+console.log(newCar);
