@@ -25,12 +25,11 @@ crea una nuova array che contenga solo il nome dei veicoli
 crea una nuova array con solo i veicoli elettriche */
 
 // creo la classe con le proprità
-class Auto{
+class Veicolo{
     brand;
     year;
     color;
-    doors;
-    fuel;
+    
     constructor(brand, year, color, doors, fuel){
 
         this.brand = brand
@@ -51,18 +50,44 @@ class Auto{
         let currentYear = 2024
         return currentYear - this.year
     }
+
+
+    
+
+
 }
+
+
+
+
+
 // creo una nuova istanza
-const Fiat =  new Auto('Fiat', 2019 ,'blu', 4, 'benzina' )
+const Fiat =  new Veicolo('Fiat', 2019 ,'blu', 4, 'benzina' )
 //loggo la istanza con il metodo per avere le info
 console.log(Fiat.informazioni());
 //loggo la istanza con il metodo per sapere quanti anni ha
 console.log(Fiat.calcolaEta());
 
+// creo una classe che eredita le proprietà della classe veicolo e ne aggiunge altre
+class Automobile extends Veicolo{
 
-
+    doors;
+    fuel;
+    // richiamo con super le proprietà di Veicolo 
+    constructor(brand, year, color, doors, fuel){   
+        super(brand, year, color,)    
+        this.doors = doors
+        this.fuel = fuel
+    }
+    //creo un metodo che raccoglie le informazioni del primo metodo e le somma al secondo
+    info2(){
+        return this.informazioni() + ' ' + this.doors + ' ' + this.fuel
+    }
+}
 
 
 
 // creo una nuova istanza
-const Opel =  new Auto('Opel', 2020 ,'nera', 4, 'benzina' )
+const Opel =  new Automobile('Opel', 2020 ,'nera', '4 porte', 'benzina' )
+
+console.log(Opel.info2());
